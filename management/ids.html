@@ -11,9 +11,9 @@ Student Designed, 1 Credit, ~30 hours IDS (Independent Directed Study)<br> Cours
 <script>
 
 document.myIDS = ''
-document.myDuration = 5
+document.myDuration = 5   //Typical duration for Gifted students
 
-maxCourses = 7 
+maxCourses = 11        // How many topics to study
 
 myMiniCourses = new Array(maxCourses)
 for (var myCourse=0; myCourse <= maxCourses; myCourse++){
@@ -41,8 +41,31 @@ myMiniCourses[4][1] = 'Sensors, Acutators (Lights, Sounds, Motors: DC brushed, S
 myMiniCourses[5][0] = 'Robotics: Advanced' 
 myMiniCourses[5][1] = 'WebSockets, Raspberry PI, Web Cam, Micro SD cards ' 
 
-myMiniCourses[6][0] = 'Machine Learning: Javascript Basics' 
-myMiniCourses[6][1] = 'Tensors, Tables, Keras Layers' 
+myMiniCourses[6][0] = 'Machine Learning: Basics (in Javascript)' 
+myMiniCourses[6][1] = 'Tensorflowjs, Tensors, Tables, Keras Layers' 
+
+myMiniCourses[6][0] = 'Machine Learning: Regular (in Javascript)'
+myMiniCourses[6][1] = 'Keras Layers in greater depth, Classifiers'
+
+myMiniCourses[7][0] = '3D printing: Basics'
+myMiniCourses[7][1] = 'Buy or Build and Setup a 3D Printer (Suggest the Anet A8 Prusa i3), Print from Thingiverse.com and TinkerCAD.com'
+
+myMiniCourses[8][0] = '3D printing: Regular'
+myMiniCourses[8][1] = 'Fine Tuning a 3D printer (Bed Height, Surface Tape, Glue Stick), Start lots of small easy prints, Density, Over hangs, Auto and Manual Supports, Large prints, Warping'
+
+myMiniCourses[9][0] = '3D Printing: Advanced'
+myMiniCourses[9][1] = 'Blender 3D, Hot Keys, Manifold, Complex Levers, Complex Gears, Complex Designs '
+
+myMiniCourses[10][0] = ''
+myMiniCourses[10][1] = ''
+
+myMiniCourses[11][0] = ''
+myMiniCourses[11][1] = ''
+
+
+
+
+
 
 
 
@@ -135,14 +158,15 @@ document.myIDS +
 <div id="hideThis01" style="display:block;">
 
 
+Enter a Descriptive Title for your IDS Course:<br>
 <input id="myTitle" placeholder="Put a Title here for your IDS course" size="100%" value="My IDS Course Title" onchange="{
    fillOutForm()
 }"><br><br>
-Choose your duration then click the topic<br>
-<input type=number id="myHours" value=5 Max = 25 Min=1> hours of study<br>
+Choose your duration of study before clicking your topic<br>
+<input type=number id="myHours" value=5 Max = 25 Min=1> hours of study<br><br>
+Remember that you can cut and paste, change things around add topics, delete ideas. this is your course so make it and own it.<br><br>
 
-
-<select size=10 id="mySelect" onChange="{
+<select size = 15 id="mySelect" onChange="{
    fillOutForm()
 }">
 <option value="<textarea rows=1 cols=40></textarea></td><td><textarea rows=1 cols=40></textarea>">Blank 1</option>
@@ -155,7 +179,7 @@ Choose your duration then click the topic<br>
 
 
 
-<input type=button value="Printable" onclick="{
+<input type=button value="Printable: no return" onclick="{
   
    document.getElementById('hideThis01').style.display = 'none'
    document.getElementById('hideThis02').style.display = 'none'
