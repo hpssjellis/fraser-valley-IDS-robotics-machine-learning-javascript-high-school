@@ -1,0 +1,39 @@
+ <script> 
+
+   var event_name = "GESTURE-EVENT"; 
+   var eventSource = new EventSource("https://api.spark.io/v1/devices/DEVICE-ID/events/?access_token=ACCESS-TOKEN"); 
+   
+   eventSource.addEventListener('open', function(e) { 
+   console.log("Opened!"); },false); 
+
+   eventSource.addEventListener('error', function(e) { 
+   console.log("Errored!"); },false); 
+
+   eventSource.addEventListener(event_name, function(e) { 
+   var parsedData = JSON.parse(e.data); 
+   document.getElementById("sensor-info").innerHTML += parsedData.data + '<br>' 
+
+   if("UP" == parsedData.data.toUpperCase()){ 
+      console.log('UP') 
+   } 
+
+   else if("DOWN" == parsedData.data.toUpperCase()){ 
+      console.log('down') 
+   } 
+
+   else if("LEFT" == parsedData.data.toUpperCase()){ 
+      console.log('left') 
+   } 
+
+   else if("RIGHT" == parsedData.data.toUpperCase()){ 
+      console.log('right') 
+   } 
+
+ }, false); 
+
+ </script> 
+
+<div id="sensor-info">...</div>  
+
+
+
