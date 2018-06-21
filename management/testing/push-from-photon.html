@@ -1,6 +1,7 @@
  <script> 
-
    var event_name = "GESTURE-EVENT"; 
+  
+   // you need the DEVICE-IS and ACCESS-TOKEN but best to use local saving. hard coded is not very safe
    var eventSource = new EventSource("https://api.spark.io/v1/devices/DEVICE-ID/events/?access_token=ACCESS-TOKEN"); 
    
    eventSource.addEventListener('open', function(e) { 
@@ -9,6 +10,8 @@
    eventSource.addEventListener('error', function(e) { 
    console.log("Errored!"); },false); 
 
+  // big inline function starts here
+  
    eventSource.addEventListener(event_name, function(e) { 
    var parsedData = JSON.parse(e.data); 
    document.getElementById("sensor-info").innerHTML += parsedData.data + '<br>' 
@@ -29,7 +32,7 @@
       console.log('right') 
    } 
 
- }, false); 
+ }, false);   // big inline function ends here
 
  </script> 
 
