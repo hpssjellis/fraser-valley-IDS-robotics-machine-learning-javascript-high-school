@@ -1,8 +1,97 @@
+<body onload={loadSelect()}>
+
+
+<h3 align=center  onclick="{
+
+   document.getElementById('hideThis01').style.display = 'block'
+}">Computer Programming, Robotics, Machine Learning, 3D Printing<br> 
+Student Designed, 1 Credit, ~30 hours IDS (Independent Directed Study)<br> Course Planning Sheet<br> </h3>
+
 
 <script>
 
 document.myIDS = ''
 document.myDuration = 5
+
+maxCourses = 7 
+
+myMiniCourses = new Array(maxCourses)
+for (var myCourse=0; myCourse <= maxCourses; myCourse++){
+   myMiniCourses[myCourse] = new Array(2)   // for 4 sub groups 0 = course group, 1 suggested duration, 2 description, 3 date done, 4 approved
+}
+
+myMiniCourses[0][0] = 'Computer Programming: Javascript Basics' 
+myMiniCourses[0][1] = 'input, output, if, for loops, variables, arrays, functions' 
+
+
+myMiniCourses[1][0] = 'Computer Programming: Javascript Advanced' 
+myMiniCourses[1][1] = 'Github, Objects, Classes, Methods, inLine Functions, Promises, Properties, Math operations, String operations, script tags' 
+
+
+myMiniCourses[2][0] = 'Electronics: Basics' 
+myMiniCourses[2][1] = 'Circuits,  parallel, Series, Ohms Law, Resistors, Diodes, Transistors, Coils, Capacitors, IC (Computer Chips)' 
+
+
+myMiniCourses[3][0] = 'Robotics: Basics' 
+myMiniCourses[3][1] = 'Particle.io Photon (or Argon Mesh 2019), Web IDE, Console, Web Interaction, IFTTT, Digital Input/Output, Analog Input/Output' 
+
+myMiniCourses[4][0] = 'Robotics: Regular' 
+myMiniCourses[4][1] = 'Sensors, Acutators (Lights, Sounds, Motors: DC brushed, Servo, Stepper), Include Files, Serial (SPI, I2C, uART)' 
+
+myMiniCourses[5][0] = 'Robotics: Advanced' 
+myMiniCourses[5][1] = 'WebSockets, Raspberry PI, Web Cam, Micro SD cards ' 
+
+myMiniCourses[6][0] = 'Machine Learning: Javascript Basics' 
+myMiniCourses[6][1] = 'Tensors, Tables, Keras Layers' 
+
+
+
+console.log(myMiniCourses)
+
+
+
+function loadSelect(){
+
+
+  for (var myCount=0; myCount <= maxCourses; myCount++){
+
+    let myOption = document.createElement("option")
+    myOption.value = '<textarea rows=1 cols=40>'+myMiniCourses[myCount][0] + '</textarea></td><td><textarea rows=1 cols=40>'+myMiniCourses[myCount][1]+'</textarea>'
+    myOption.text = myMiniCourses[myCount][0] + ' --> '+myMiniCourses[myCount][1]
+    document.getElementById('mySelect').add(myOption)
+
+  }
+
+
+
+//<option value="<textarea rows=1 cols=40>Computer Programming</textarea></td><td><textarea rows=1 cols=40>Basics in PHP</textarea>">2:25 hours, Computer Programming: Basics in PHP </option>
+
+
+}
+
+
+
+
+
+
+function myCheckTotal(){
+  var myNumbers = document.querySelectorAll("input[type=number]");
+
+  myNewTotal = 0
+
+  for (var i = 1; i < myNumbers.length-1; ++i) {
+     myNewTotal += parseInt(myNumbers[i].value)
+  }
+
+  document.myDuration = myNewTotal
+  document.getElementById('mainTotal').value = myNewTotal
+
+ // alert(myNumbers.length)
+}
+
+
+
+
 
 function fillOutForm(){
 
@@ -11,17 +100,28 @@ function fillOutForm(){
 document.myDuration += parseInt(document.getElementById('myHours').value)
 
 
-document.myIDS +='<tr><td>'+ document.getElementById('mySelect').value + '</td><td>'+ document.getElementById('myHours').value +' hours</td></tr>'
+document.myIDS +='<tr><td>'+ document.getElementById('mySelect').value + '</td><td><input type=number style="width:50px" onchange="{myCheckTotal()}" value='+ document.getElementById("myHours").value +'>hours</td></tr>'
  
 document.getElementById('myDiv01').innerHTML =  ' '+ 
-'<h3 align=center>'+document.getElementById('myTitle').value+'<br> 1 Credit ~30 hours IDS (Independent Directed Study)<br> Student Designed course </h3>' +
-'Total Hours = ' + document.myDuration + '<br>' + 
+'<h1 align=center>'+document.getElementById('myTitle').value+'</h1>' +
 '<table border=1><tr><th>Topic</th><th>Big Idea</th><th>Study Duration</th></tr>'+
 document.myIDS +
-'<tr><td>Final Project</td><td>Web based demonstration of your learning</td><td>5 hours</td></tr>'+
-'<tr><td></td><td><b>Total</b></td><td><b>'+document.myDuration+' hours</b></td></tr>'+
+'<tr><td><textarea rows=1 cols=40>Final Project</textarea></td><td><textarea rows=1 cols=40>Web based demonstration of your learning</textarea></td><td><input type=number style="width:50px" onchange="{myCheckTotal()}" value=5 > hours</td></tr>'+
+'<tr><td></td><td><b>Total</b></td><td><b><input type=number id="mainTotal" style="width:50px" value='+document.myDuration+'> hours</b></td></tr>'+
 '</table><br><br>'+
-'Principal Signed:______, Onsite Teacher:_________, <br><br>Student Name:______________ Student Signature:___________, Date:___________ '
+'Student Name:___________________________, Student Signature:______________________________,<br><br>'+
+'Parent Supervisor Name:___________________, Parent Signature:_______________________________,<br><br>'+
+'Onsite Teacher Mentor:____________________, Teacher Mentor Signature: _______________________,<br><br>'+
+'School:_________________________________, Principal Signature:_____________________________,<br><br>'+
+'Date:___________________________'
+
+
+
+
+  var myTA = document.querySelectorAll("textarea");
+  for (var i = 1; i < myTA.length-1; ++i) {
+      myTA[i].rows = parseInt(myTA[i].value.length / 20)
+  }
 
 
 }
@@ -30,25 +130,64 @@ document.myIDS +
 
 
 </script>
-<input id="myTitle" placeholder="Put a Title here for your IDS course" size="100%" value="My IDS course" onchange="{
+
+
+<div id="hideThis01" style="display:block;">
+
+
+<input id="myTitle" placeholder="Put a Title here for your IDS course" size="100%" value="My IDS Course Title" onchange="{
    fillOutForm()
 }"><br><br>
 Choose your duration then click the topic<br>
 <input type=number id="myHours" value=5 Max = 25 Min=1> hours of study<br>
 
 
-<select size=7 id="mySelect"onChange="{
+<select size=10 id="mySelect" onChange="{
    fillOutForm()
 }">
-
-<option value="Computer Programming</td><td>Basics in Javascript ">2:25 hours, Computer Programming: Basics in Javascript </option>
-<option value="Computer Programming</td><td>Advanced Data Structures and Manipulation">5-25 hours, Computer Programming: Advanced Data Structures and Manipulation ..............................................................................................</option>
-<option value="Computer Programming</td><td>Basics in PHP">2:25 hours, Computer Programming: Basics in PHP </option>
-<option value="Game Development</td><td>Making computer games">2:25 hours, Game Development: Making computer games </option>
-<option value="Robotics</td><td>Designing Robots">2:25 hours, Robotics: Designing Robots </option>
-</select>
+<option value="<textarea rows=1 cols=40></textarea></td><td><textarea rows=1 cols=40></textarea>">Blank 1</option>
+<option value="<textarea rows=1 cols=40></textarea></td><td><textarea rows=1 cols=40></textarea>">Blank 2</option>
+</select><br>
 
 
+
+
+
+
+
+<input type=button value="Printable" onclick="{
+  
+   document.getElementById('hideThis01').style.display = 'none'
+   document.getElementById('hideThis02').style.display = 'none'
+
+
+}">
+
+</div>
+
+
+
+
+<!--
+
+
+<input type=button value="Generate Page to Print" onclick="{
+
+  var myTemp = '<table border=1 width=100%>'
+
+
+  var myNumbers = document.querySelectorAll('input[type=number]');
+
+  var myTA = document.querySelectorAll('textarea');
+  for (var i = 1; i < myTA.length-1; i+=2) {
+     myTemp += '<tr><td>'+myTA[i-1].value +'</td><td>'+myTA[i].value + '</td></tr>'+ myNumbers[parseInt(i/2)].value + '<br>'
+  }
+
+
+document.write(myTemp)
+}">
+
+-->
 
 
 
@@ -56,7 +195,12 @@ Choose your duration then click the topic<br>
 <div id="myDiv01"></div>
 
 
-<ol>Resources:
+
+
+<div id="hideThis02" style="display:block;">
+
+
+<ol><h3>Resources:</h3>
 <li> Gov BC: <a href="https://www2.gov.bc.ca/gov/content/education-training/administration/legislation-policy/public-schools/earning-credit-through-equivalency-challenge-external-credentials-post-secondary-credit-and-independent-directed-studies">IDS Rules</a>
 <li>Javascript: <a href="https://www.w3schools.com/">w3schools Javascript</a>
 <li>PHP: <a href="https://www.w3schools.com/php/default.asp">w3schools PHP</a>
@@ -66,14 +210,29 @@ Choose your duration then click the topic<br>
 <li> 3D Printing: <a href="http://fvmakers.com/"> http://fvmakers.com/ </a>
 </ol>
 
+<br><br>
 
-
-<ol>General Safety:
+<ol><h3>General Safety Considerations:</h3>
 <li> As this is an independent study, safety and sensible decisions is paramount. A high level of safe decisions is needed to remain doing the IDS course.
-<li> No use of liquids without a knowledgeable adult present
+<br>
+<li> No use of open electronics above 18 Volts and or 5 Amps without a qualified adult present 
+<li> No use of soldering or other dangerous apparatus without a qualified adult present  
+<li> No use of liquids without a qualified adult present 
 <li> No assignments using (flying) drones
+<li> 
 <li>
-<li>
-<li>
+
 <li> 
 </ol>
+
+
+</div>
+
+
+<h6>Form by Jeremy Ellis<br>
+Website: <a href="http://www.rocksetta.com">rocksetta.com</a><br>
+Twitter: @rocksetta<br>
+Use at your own Risk<br>
+</h6>
+
+</body>
