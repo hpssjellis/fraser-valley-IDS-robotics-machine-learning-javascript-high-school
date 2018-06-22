@@ -1,0 +1,272 @@
+<body onload={loadSelect()}>
+
+
+<h3 align=center  onclick="{
+
+   document.getElementById('hideThis01').style.display = 'block'
+}">Computer Programming, Robotics, Machine Learning, 3D Printing<br> 
+Student Designed, 1 Credit, ~30 hours IDS <br>(Independent Directed Study)<br> Course Planning Sheet<br> </h3>
+
+
+<script>
+
+document.myIDS = ''
+document.myDuration = 5   //Typical duration for Gifted students
+
+maxCourses = 11        // How many topics to study
+
+myMiniCourses = new Array(maxCourses)
+for (var myCourse=0; myCourse <= maxCourses; myCourse++){
+   myMiniCourses[myCourse] = new Array(2)   // for 4 sub groups 0 = course group, 1 suggested duration, 2 description, 3 date done, 4 approved
+}
+
+myMiniCourses[0][0] = 'Computer Programming: Javascript Basics' 
+myMiniCourses[0][1] = 'input, output, if, for loops, variables, arrays, functions' 
+
+
+myMiniCourses[1][0] = 'Computer Programming: Javascript Advanced' 
+myMiniCourses[1][1] = 'Github, Objects, Classes, Methods, inLine Functions, Promises, Properties, Math operations, String operations, script tags' 
+
+
+myMiniCourses[2][0] = 'Electronics: Basics' 
+myMiniCourses[2][1] = 'Circuits,  parallel, Series, Ohms Law, Resistors, Diodes, Transistors, Coils, Capacitors, IC (Computer Chips)' 
+
+
+myMiniCourses[3][0] = 'Robotics: Basics' 
+myMiniCourses[3][1] = 'Particle.io Photon (or Argon Mesh 2019), Web IDE, Console, Web Interaction, IFTTT, Digital Input/Output, Analog Input/Output' 
+
+myMiniCourses[4][0] = 'Robotics: Regular' 
+myMiniCourses[4][1] = 'Sensors, Acutators (Lights, Sounds, Motors: DC brushed, Servo, Stepper), Include Files, Serial (SPI, I2C, uART)' 
+
+myMiniCourses[5][0] = 'Robotics: Advanced' 
+myMiniCourses[5][1] = 'WebSockets, Raspberry PI, Web Cam, Micro SD cards ' 
+
+myMiniCourses[6][0] = 'Machine Learning: Basics (in Javascript)' 
+myMiniCourses[6][1] = 'Tensorflowjs, Tensors, Tables, Keras Layers' 
+
+myMiniCourses[6][0] = 'Machine Learning: Regular (in Javascript)'
+myMiniCourses[6][1] = 'Keras Layers in greater depth, Classifiers'
+
+myMiniCourses[7][0] = '3D printing: Basics'
+myMiniCourses[7][1] = 'Buy or Build and Setup a 3D Printer (Suggest the Anet A8 Prusa i3), Print from Thingiverse.com and TinkerCAD.com'
+
+myMiniCourses[8][0] = '3D printing: Regular'
+myMiniCourses[8][1] = 'Fine Tuning a 3D printer (Bed Height, Surface Tape, Glue Stick), Start lots of small easy prints, Density, Over hangs, Auto and Manual Supports, Large prints, Warping'
+
+myMiniCourses[9][0] = '3D Printing: Advanced'
+myMiniCourses[9][1] = 'Blender 3D, Hot Keys, Manifold, Complex Levers, Complex Gears, Complex Designs '
+
+myMiniCourses[10][0] = ''
+myMiniCourses[10][1] = ''
+
+myMiniCourses[11][0] = ''
+myMiniCourses[11][1] = ''
+
+
+
+
+
+
+
+
+console.log(myMiniCourses)
+
+
+
+function loadSelect(){
+
+
+  for (var myCount=0; myCount <= maxCourses; myCount++){
+
+    let myOption = document.createElement("option")
+    myOption.value = '<textarea rows=1 cols=40>'+myMiniCourses[myCount][0] + '</textarea></td><td><textarea rows=1 cols=40>'+myMiniCourses[myCount][1]+'</textarea>'
+    myOption.text = myMiniCourses[myCount][0] + ' --> '+myMiniCourses[myCount][1]
+    document.getElementById('mySelect').add(myOption)
+
+  }
+
+
+
+//<option value="<textarea rows=1 cols=40>Computer Programming</textarea></td><td><textarea rows=1 cols=40>Basics in PHP</textarea>">2:25 hours, Computer Programming: Basics in PHP </option>
+
+
+}
+
+
+
+
+
+
+function myCheckTotal(){
+  var myNumbers = document.querySelectorAll("input[type=number]");
+
+  myNewTotal = 0
+
+  for (var i = 1; i < myNumbers.length-1; ++i) {
+     myNewTotal += parseInt(myNumbers[i].value)
+  }
+
+  document.myDuration = myNewTotal
+  document.getElementById('mainTotal').value = myNewTotal
+
+ // alert(myNumbers.length)
+}
+
+
+
+
+
+function fillOutForm(){
+
+
+
+document.myDuration += parseInt(document.getElementById('myHours').value)
+
+
+document.myIDS +='<tr><td>'+ document.getElementById('mySelect').value + '</td><td><input type=number style="width:50px" onchange="{myCheckTotal()}" value='+ document.getElementById("myHours").value +'>hours</td></tr>'
+ 
+document.getElementById('myDiv01').innerHTML =  ' '+ 
+'<h1 align=center>'+document.getElementById('myTitle').value+'</h1>' +
+'<table border=1><tr><th>Topic</th><th>Specifics</th><th>Study Duration</th></tr>'+
+document.myIDS +
+'<tr><td><textarea rows=1 cols=40>Final Project</textarea></td><td><textarea rows=1 cols=40>Web based demonstration of your learning</textarea></td><td><input type=number style="width:50px" onchange="{myCheckTotal()}" value=5 > hours</td></tr>'+
+'<tr><td><b>Student IDS Course</b></td><td><b>Total</b></td><td><b><input type=number id="mainTotal" style="width:50px" value='+document.myDuration+'> hours</b></td></tr>'+
+'</table><br><br>'+
+'Student Name:______________________, Student Signature:_____________________,<br><br>'+
+'Parent Supervisor Name:______________, Parent Signature:______________________,<br><br>'+
+'Onsite Teacher Mentor:_______________, Teacher Mentor Signature: ______________,<br><br>'+
+'School:____________________________, Principal Signature:____________________,<br><br>'+
+'Date Signed:______________________, Date Completed by: ____________________<br><br>'
+
+myWeb = document.getElementById('mySite').value
+
+if (myWeb != ''){
+   document.getElementById('myDiv01').innerHTML += 'Student website to be marked at this link: <br><a href='+ myWeb+'>'+ myWeb+'</a><br><br>' 
+}
+
+
+  var myTA = document.querySelectorAll("textarea");
+  for (var i = 1; i < myTA.length-1; ++i) {
+      myTA[i].rows = parseInt(myTA[i].value.length / 20)
+  }
+
+
+}
+
+
+
+
+</script>
+
+
+<div id="hideThis01" style="display:block;">
+
+
+Enter a Descriptive Title for your IDS Course:<br>
+<input id="myTitle" placeholder="Put a Title here for your IDS course" size="100%" value="My IDS Course Title" onchange="{
+   fillOutForm()
+}"><br><br>
+Enter your website for this course, if you have already made it<br>
+<input id="mySite" placeholder="https://github.com/myGithubLogin/myRepositoryName -- leave blank if you don't have a site" size="100%" value="" onchange="{
+   fillOutForm()
+}"><br><br>
+
+Choose your duration of study before clicking your topic<br>
+<input type=number id="myHours" value=5 Max = 25 Min=0> hours of study<br><br>
+Remember that you can cut and paste, change things around add topics, delete ideas. This is your course so make it and own it.<br>
+P.S. Lower level prerequisites can be added with zero hours if you have mastered them.<br><br>
+
+<select size = 15 id="mySelect" onChange="{
+   fillOutForm()
+}">
+<option value="<textarea rows=1 cols=40></textarea></td><td><textarea rows=1 cols=40></textarea>">Blank 1</option>
+<option value="<textarea rows=1 cols=40></textarea></td><td><textarea rows=1 cols=40></textarea>">Blank 2</option>
+</select><br>
+
+
+
+
+
+
+
+<input type=button value="Printable: no return" onclick="{
+  
+   document.getElementById('hideThis01').style.display = 'none'
+   document.getElementById('hideThis02').style.display = 'none'
+
+
+}">
+
+</div>
+
+
+
+
+<!--
+
+
+<input type=button value="Generate Page to Print" onclick="{
+
+  var myTemp = '<table border=1 width=100%>'
+
+
+  var myNumbers = document.querySelectorAll('input[type=number]');
+
+  var myTA = document.querySelectorAll('textarea');
+  for (var i = 1; i < myTA.length-1; i+=2) {
+     myTemp += '<tr><td>'+myTA[i-1].value +'</td><td>'+myTA[i].value + '</td></tr>'+ myNumbers[parseInt(i/2)].value + '<br>'
+  }
+
+
+document.write(myTemp)
+}">
+
+-->
+
+
+
+
+<div id="myDiv01"></div>
+
+
+
+
+<div id="hideThis02" style="display:block;">
+
+
+<ol><h3>Resources:</h3>
+<li> Gov BC: <a href="https://www2.gov.bc.ca/gov/content/education-training/administration/legislation-policy/public-schools/earning-credit-through-equivalency-challenge-external-credentials-post-secondary-credit-and-independent-directed-studies">IDS Rules</a>
+<li>Javascript: <a href="https://www.w3schools.com/">w3schools Javascript</a>
+<li>PHP: <a href="https://www.w3schools.com/php/default.asp">w3schools PHP</a>
+<li>Electronics for Robotics: <a hrerf="https://www.particle.io/products/hardware/photon-wifi">Particle.io Photon</a>
+<li> Machine Learning: <a href="https://js.tensorflow.org/#getting-started">Tensorflowjs</a>
+<li> Fraser Valley GearBots: <a href="http://www.gearbots.org/"> http://www.gearbots.org/</a>
+<li> 3D Printing: <a href="http://fvmakers.com/"> http://fvmakers.com/ </a>
+</ol>
+
+<br><br>
+
+<ol><h3>General Safety Considerations:</h3>
+<li> As this is an independent study, safety and sensible decisions is paramount. A high level of safe decisions is needed to remain doing the IDS course.
+<br>
+<li> No use of open electronics above 18 Volts and or 5 Amps without a qualified adult present 
+<li> No use of soldering or other dangerous apparatus without a qualified adult present  
+<li> No use of liquids without a qualified adult present 
+<li> No assignments using (flying) drones
+<li> 
+<li>
+
+<li> 
+</ol>
+
+
+</div>
+
+
+<h6>Form by Jeremy Ellis, 
+Website: <a href="http://www.rocksetta.com">rocksetta.com</a>, 
+Twitter: @rocksetta, 
+Use at your own risk<br>
+</h6>
+
+</body>
