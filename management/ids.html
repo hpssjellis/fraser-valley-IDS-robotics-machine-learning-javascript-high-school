@@ -13,54 +13,197 @@ Student Designed, 1 Credit, ~30 hours IDS <br>(Independent Directed Study)<br> C
 document.myIDS = ''
 document.myDuration = 5   //Typical duration for Gifted students
 
-maxCourses = 11        // How many topics to study
+maxCourses = 39        // How many topics to study
+
+
+
 
 myMiniCourses = new Array(maxCourses)
 for (var myCourse=0; myCourse <= maxCourses; myCourse++){
    myMiniCourses[myCourse] = new Array(2)   // for 4 sub groups 0 = course group, 1 suggested duration, 2 description, 3 date done, 4 approved
 }
 
-myMiniCourses[0][0] = 'Computer Programming: Javascript Basics' 
-myMiniCourses[0][1] = 'input, output, if, for loops, variables, arrays, functions' 
+
+var myIterate = 0
+myMiniCourses[myIterate][0] = 'Computer Programming: Level 0 Web Basics' 
+myMiniCourses[myIterate][1] = 'Tags: link, img, b, i, div, table, form, ol, css styles, ...' 
+ 
+myIterate +=1
+myMiniCourses[myIterate][0] = 'Computer Programming: Level 1 Javascript Basics' 
+myMiniCourses[myIterate][1] = 'input, output, if, for loops, variables, arrays, functions' 
+
+myIterate += 1
+myMiniCourses[myIterate][0] = 'Computer Programming: Level 2 Javascript Storage' 
+myMiniCourses[myIterate][1] = 'script tags, variables, arrays, objects' 
 
 
-myMiniCourses[1][0] = 'Computer Programming: Javascript Advanced' 
-myMiniCourses[1][1] = 'Github, Objects, Classes, Methods, inLine Functions, Promises, Properties, Math operations, String operations, script tags' 
+myIterate += 1
+myMiniCourses[myIterate][0] = 'Computer Programming: Level 3 Javascript Strings'
+myMiniCourses[myIterate][1] = 'Console.log, Upcase, Substring, ... '
 
 
-myMiniCourses[2][0] = 'Electronics: Basics' 
-myMiniCourses[2][1] = 'Circuits,  parallel, Series, Ohms Law, Resistors, Diodes, Transistors, Coils, Capacitors, IC (Computer Chips)' 
+myIterate += 1
+myMiniCourses[myIterate][0] = 'Computer Programming: Level 4 Javascript Events'
+myMiniCourses[myIterate][1] = 'onClick, ondbclick, onBlur, onFocus, onMouseMove, ...'
 
 
-myMiniCourses[3][0] = 'Robotics: Basics' 
-myMiniCourses[3][1] = 'Particle.io Photon (or Argon Mesh 2019), Web IDE, Console, Web Interaction, IFTTT, Digital Input/Output, Analog Input/Output' 
+myIterate += 1
+myMiniCourses[myIterate][0] = 'Computer Programming: Level 5 Javascript Math'
+myMiniCourses[myIterate][1] = 'Math.floor, Math.round, Math.abs, ...'
 
-myMiniCourses[4][0] = 'Robotics: Regular' 
-myMiniCourses[4][1] = 'Sensors, Acutators (Lights, Sounds, Motors: DC brushed, Servo, Stepper), Include Files, Serial (SPI, I2C, uART)' 
 
-myMiniCourses[5][0] = 'Robotics: Advanced' 
-myMiniCourses[5][1] = 'WebSockets, Raspberry PI, Web Cam, Micro SD cards ' 
 
-myMiniCourses[6][0] = 'Machine Learning: Basics (in Javascript)' 
-myMiniCourses[6][1] = 'Tensorflowjs, Tensors, Tables, Keras Layers' 
+myIterate += 1
+myMiniCourses[myIterate][0] = 'Computer Programming: Level 6 Javascript Classes'
+myMiniCourses[myIterate][1] = 'Github, Classes, Methods, Properties, inLine Functions, Promises'
 
-myMiniCourses[6][0] = 'Machine Learning: Regular (in Javascript)'
-myMiniCourses[6][1] = 'Keras Layers in greater depth, Classifiers'
 
-myMiniCourses[7][0] = '3D printing: Basics'
-myMiniCourses[7][1] = 'Buy or Build and Setup a 3D Printer (Suggest the Anet A8 Prusa i3), Print from Thingiverse.com and TinkerCAD.com'
+myIterate += 1
+myMiniCourses[myIterate][0] = 'Computer Programming: Level 7 Javascript Advanced'
+myMiniCourses[myIterate][1] = 'Fancy features'
 
-myMiniCourses[8][0] = '3D printing: Regular'
-myMiniCourses[8][1] = 'Fine Tuning a 3D printer (Bed Height, Surface Tape, Glue Stick), Start lots of small easy prints, Density, Over hangs, Auto and Manual Supports, Large prints, Warping'
+myIterate += 1
+myMiniCourses[myIterate][0] = 'Computer Programming: Level 8 PHP Databases'
+myMiniCourses[myIterate][1] = 'c9.io, Github, insert, update, delete'
 
-myMiniCourses[9][0] = '3D Printing: Advanced'
-myMiniCourses[9][1] = 'Blender 3D, Hot Keys, Manifold, Complex Levers, Complex Gears, Complex Designs '
+myIterate += 1
+myMiniCourses[myIterate][0] = ''
+myMiniCourses[myIterate][1] = ''
 
-myMiniCourses[10][0] = ''
-myMiniCourses[10][1] = ''
 
-myMiniCourses[11][0] = ''
-myMiniCourses[11][1] = ''
+myIterate += 1
+myMiniCourses[myIterate][0] = 'Robotics: Level 1 Basic Electronics' 
+myMiniCourses[myIterate][1] = 'Circuits,  parallel, Series, Ohms Law' 
+
+myIterate += 1
+myMiniCourses[myIterate][0] = 'Robotics: Level 2 Regular Electronics' 
+myMiniCourses[myIterate][1] = 'Resistors, Diodes, Transistors, Coils, Capacitors, IC (Computer Chips)' 
+
+myIterate += 1
+myMiniCourses[myIterate][0] = 'Robotics: Level 3 Basic Particle.io' 
+myMiniCourses[myIterate][1] = 'Particle.io Photon (or Argon Mesh 2019), Web IDE, Console, Web Interaction, Github' 
+
+myIterate += 1
+myMiniCourses[myIterate][0] = 'Robotics: Level 4 Basic Input/Output' 
+myMiniCourses[myIterate][1] = 'IFTTT, Digital Input/Output, Analog Input/Output, advanced Web Interaction' 
+
+myIterate += 1
+myMiniCourses[myIterate][0] = 'Robotics: Level 5 Basic Programming C++' 
+myMiniCourses[myIterate][1] = 'setup, loop, input, output, if, for loops, variables, arrays, functions' 
+
+myIterate += 1
+myMiniCourses[myIterate][0] = 'Robotics: Level 6 Sensors' 
+myMiniCourses[myIterate][1] = 'Sensors: digital and Analog, Voltage Divider' 
+
+myIterate += 1
+myMiniCourses[myIterate][0] = 'Robotics: Level 7 Actuators' 
+myMiniCourses[myIterate][1] = 'Acutators: digital (0-1) and Analog (Lights, Sounds, Motors: DC brushed, Servo, Stepper), input 0-4095, Output PWM 0-255' 
+
+myIterate += 1
+myMiniCourses[myIterate][0] = 'Robotics: Level 8 Complex Sensor/Actuators'
+myMiniCourses[myIterate][1] = 'Include Files, Serial (SPI, I2C, uART)'
+
+myIterate += 1
+myMiniCourses[myIterate][0] = 'Robotics: Level 9 Advanced Use'
+myMiniCourses[myIterate][1] = 'WebSockets, Raspberry PI, Web Cam, Micro SD cards '
+
+
+myIterate += 1
+myMiniCourses[myIterate][0] = 'Robotics: Level 10 '
+myMiniCourses[myIterate][1] = 'coming later'
+
+
+myIterate += 1
+myMiniCourses[myIterate][0] = 'Robotics: Level 11 '
+myMiniCourses[myIterate][1] = 'coming later'
+
+
+myIterate += 1
+myMiniCourses[myIterate][0] = ''
+myMiniCourses[myIterate][1] = ''
+
+
+
+myIterate += 1
+myMiniCourses[myIterate][0] = 'Machine Learning: Level 1 Basics (in Javascript)' 
+myMiniCourses[myIterate][1] = 'Using Javascript for Machine Learning, async, await, tensors, ...' 
+
+
+myIterate += 1
+myMiniCourses[myIterate][0] = 'Machine Learning: Level 2 Introduction (in Javascript)' 
+myMiniCourses[myIterate][1] = 'Tensorflowjs, Tensors, Tables, Keras Layers' 
+
+myIterate += 1
+myMiniCourses[myIterate][0] = 'Machine Learning: Level 3 Research'
+myMiniCourses[myIterate][1] = 'Research: supervised, unsupervised, classifiers, Neural Networks'
+
+myIterate += 1
+myMiniCourses[myIterate][0] = 'Machine Learning: Level 4'
+myMiniCourses[myIterate][1] = 'Keras Layers in greater depth'
+
+
+myIterate += 1
+myMiniCourses[myIterate][0] = 'Machine Learning: Level 5'
+myMiniCourses[myIterate][1] = 'Coming later'
+
+
+myIterate += 1
+myMiniCourses[myIterate][0] = 'Machine Learning: Level 6'
+myMiniCourses[myIterate][1] = 'Coming later'
+
+
+myIterate += 1
+myMiniCourses[myIterate][0] = 'Machine Learning: Level 7'
+myMiniCourses[myIterate][1] = 'Coming later'
+
+
+myIterate += 1
+myMiniCourses[myIterate][0] = ''
+myMiniCourses[myIterate][1] = ''
+
+
+myIterate += 1
+myMiniCourses[myIterate][0] = '3D Printing: Level 1 Build or Buy'
+myMiniCourses[myIterate][1] = 'Buy or Build and Setup a 3D Printer (Suggest the Anet A8 Prusa i3)'
+
+myIterate += 1
+myMiniCourses[myIterate][0] = '3D Printing: Level 2 First Printing'
+myMiniCourses[myIterate][1] = 'Print from Thingiverse.com, or other .stl repository. Converting to G code for printing'
+
+myIterate += 1
+myMiniCourses[myIterate][0] = '3D Printing: Level 3 More Printing'
+myMiniCourses[myIterate][1] = 'Fine Tuning a 3D printer (Bed Height, Surface Tape, Glue Stick), Start lots of small easy prints, density'
+
+myIterate += 1
+myMiniCourses[myIterate][0] = '3D Printing: Level 4 Advanced Printing'
+myMiniCourses[myIterate][1] = 'Over hangs, Auto and Manual Supports, Large prints, Warping'
+
+myIterate += 1
+myMiniCourses[myIterate][0] = '3D Printing: Level 5 Basic Design'
+myMiniCourses[myIterate][1] = 'TinkerCAD.com or other online 3D Printing software'
+
+myIterate += 1
+myMiniCourses[myIterate][0] = '3D Printing: Level 6 Advanced Design'
+myMiniCourses[myIterate][1] = 'Blender.org, hot keys, 3D Printing tools'
+
+myIterate += 1
+myMiniCourses[myIterate][0] = '3D Printing: Level 7 Manifold'
+myMiniCourses[myIterate][1] = 'Manifold, '
+
+myIterate += 1
+myMiniCourses[myIterate][0] = '3D Printing: Level 8 Complex Prints'
+myMiniCourses[myIterate][1] = 'Complex Levers, Complex Gears, Complex Designs'
+
+
+myIterate += 1
+myMiniCourses[myIterate][0] = '3D Printing: Level 9 Faster Designing'
+myMiniCourses[myIterate][1] = 'Print small important parts of larger prints'
+
+
+myIterate += 1
+myMiniCourses[myIterate][0] = ''
+myMiniCourses[myIterate][1] = ''
+
 
 
 
@@ -176,11 +319,9 @@ Choose your duration of study before clicking your topic<br>
 Remember that you can cut and paste, change things around add topics, delete ideas. This is your course so make it and own it.<br>
 P.S. Lower level prerequisites can be added with zero hours if you have mastered them.<br><br>
 
-<select size = 15 id="mySelect" onChange="{
+<select size = 35 id="mySelect" onChange="{
    fillOutForm()
 }">
-<option value="<textarea rows=1 cols=40></textarea></td><td><textarea rows=1 cols=40></textarea>">Blank 1</option>
-<option value="<textarea rows=1 cols=40></textarea></td><td><textarea rows=1 cols=40></textarea>">Blank 2</option>
 </select><br>
 
 
@@ -217,6 +358,9 @@ P.S. Lower level prerequisites can be added with zero hours if you have mastered
      myTemp += '<tr><td>'+myTA[i-1].value +'</td><td>'+myTA[i].value + '</td></tr>'+ myNumbers[parseInt(i/2)].value + '<br>'
   }
 
+
+ // var myWindow = window.open("", "_blank");
+ // myWindow.document.write(myTemp);
 
 document.write(myTemp)
 }">
