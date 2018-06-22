@@ -5,7 +5,7 @@
 
    document.getElementById('hideThis01').style.display = 'block'
 }">Computer Programming, Robotics, Machine Learning, 3D Printing<br> 
-Student Designed, 1 Credit, ~30 hours IDS (Independent Directed Study)<br> Course Planning Sheet<br> </h3>
+Student Designed, 1 Credit, ~30 hours IDS <br>(Independent Directed Study)<br> Course Planning Sheet<br> </h3>
 
 
 <script>
@@ -130,15 +130,19 @@ document.getElementById('myDiv01').innerHTML =  ' '+
 '<table border=1><tr><th>Topic</th><th>Big Idea</th><th>Study Duration</th></tr>'+
 document.myIDS +
 '<tr><td><textarea rows=1 cols=40>Final Project</textarea></td><td><textarea rows=1 cols=40>Web based demonstration of your learning</textarea></td><td><input type=number style="width:50px" onchange="{myCheckTotal()}" value=5 > hours</td></tr>'+
-'<tr><td></td><td><b>Total</b></td><td><b><input type=number id="mainTotal" style="width:50px" value='+document.myDuration+'> hours</b></td></tr>'+
+'<tr><td><b>Student IDS Course</b></td><td><b>Total</b></td><td><b><input type=number id="mainTotal" style="width:50px" value='+document.myDuration+'> hours</b></td></tr>'+
 '</table><br><br>'+
-'Student Name:___________________________, Student Signature:______________________________,<br><br>'+
-'Parent Supervisor Name:___________________, Parent Signature:_______________________________,<br><br>'+
-'Onsite Teacher Mentor:____________________, Teacher Mentor Signature: _______________________,<br><br>'+
-'School:_________________________________, Principal Signature:_____________________________,<br><br>'+
-'Date:___________________________'
+'Student Name:______________________, Student Signature:_____________________,<br><br>'+
+'Parent Supervisor Name:______________, Parent Signature:______________________,<br><br>'+
+'Onsite Teacher Mentor:_______________, Teacher Mentor Signature: ______________,<br><br>'+
+'School:____________________________, Principal Signature:____________________,<br><br>'+
+'Date Signed:______________________, Date Completed by: ____________________<br><br>'
 
+myWeb = document.getElementById('mySite').value
 
+if (myWeb != ''){
+   document.getElementById('myDiv01').innerHTML += 'Student website to be marked at this link: <br><a href='+ myWeb+'>'+ myWeb+'</a><br><br>' 
+}
 
 
   var myTA = document.querySelectorAll("textarea");
@@ -162,9 +166,15 @@ Enter a Descriptive Title for your IDS Course:<br>
 <input id="myTitle" placeholder="Put a Title here for your IDS course" size="100%" value="My IDS Course Title" onchange="{
    fillOutForm()
 }"><br><br>
+Enter your website for this course, if you have already made it<br>
+<input id="mySite" placeholder="https://github.com/myGithubLogin/myRepositoryName -- leave blank if you don't have a site" size="100%" value="" onchange="{
+   fillOutForm()
+}"><br><br>
+
 Choose your duration of study before clicking your topic<br>
 <input type=number id="myHours" value=5 Max = 25 Min=1> hours of study<br><br>
-Remember that you can cut and paste, change things around add topics, delete ideas. this is your course so make it and own it.<br><br>
+Remember that you can cut and paste, change things around add topics, delete ideas. This is your course so make it and own it.<br>
+P.S. Lower level prerequisites can be added with zero hours if you have mastered them.<br><br>
 
 <select size = 15 id="mySelect" onChange="{
    fillOutForm()
@@ -253,10 +263,10 @@ document.write(myTemp)
 </div>
 
 
-<h6>Form by Jeremy Ellis<br>
-Website: <a href="http://www.rocksetta.com">rocksetta.com</a><br>
-Twitter: @rocksetta<br>
-Use at your own Risk<br>
+<h6>Form by Jeremy Ellis, 
+Website: <a href="http://www.rocksetta.com">rocksetta.com</a>, 
+Twitter: @rocksetta, 
+Use at your own risk<br>
 </h6>
 
 </body>
