@@ -5,7 +5,7 @@
 
    document.getElementById('hideThis01').style.display = 'block'
 }">Computer Programming, Robotics, Machine Learning, 3D Printing<br> 
-Student Designed, 1 Credit, ~30 hours IDS <br>(Independent Directed Study)<br> Course Planning Sheet<br> </h3>
+Student Designed, 1 Credit = ~30 hours IDS <br>(Independent Directed Study)<br> Course Planning Sheet<br> </h3>
 
 
 <script>
@@ -109,7 +109,7 @@ myMiniCourses[myIterate][1] = 'WebSockets, Raspberry PI, Web Cam, Micro SD cards
 
 
 myIterate += 1
-myMiniCourses[myIterate][0] = 'Robotics: Level 10 '
+myMiniCourses[myIterate][0] = 'Robotics: Level 10'
 myMiniCourses[myIterate][1] = 'coming later'
 
 
@@ -289,7 +289,7 @@ if (myWeb != ''){
 
 
   var myTA = document.querySelectorAll("textarea");
-  for (var i = 1; i < myTA.length-1; ++i) {
+  for (var i = 0; i < myTA.length-1; ++i) {
       myTA[i].rows = parseInt(myTA[i].value.length / 20)
   }
 
@@ -310,7 +310,7 @@ Enter a Descriptive Title for your IDS Course:<br>
    fillOutForm()
 }"><br><br>
 Enter your website for this course, if you have already made it<br>
-<input id="mySite" placeholder="https://github.com/myGithubLogin/myRepositoryName -- leave blank if you don't have a site" size="100%" value="" onchange="{
+<input id="mySite" placeholder="https://myGithubLogin.github.io/myRepositoryName -- leave blank if you don't have a site" size="100%" value="" onchange="{
    fillOutForm()
 }"><br><br>
 
@@ -319,10 +319,10 @@ Choose your duration of study before clicking your topic<br>
 Remember that you can cut and paste, change things around add topics, delete ideas. This is your course so make it and own it.<br>
 P.S. Lower level prerequisites can be added with zero hours if you have mastered them.<br><br>
 
-<select size = 35 id="mySelect" onChange="{
+<select size = 41 id="mySelect" onChange="{
    fillOutForm()
 }">
-</select><br>
+</select><br><br>
 
 
 
@@ -330,7 +330,7 @@ P.S. Lower level prerequisites can be added with zero hours if you have mastered
 
 
 
-<input type=button value="Printable: no return" onclick="{
+<input type=button value="Printable" onclick="{
   
    document.getElementById('hideThis01').style.display = 'none'
    document.getElementById('hideThis02').style.display = 'none'
@@ -378,30 +378,49 @@ document.write(myTemp)
 <div id="hideThis02" style="display:block;">
 
 
-<ol><h3>Resources:</h3>
-<li> Gov BC: <a href="https://www2.gov.bc.ca/gov/content/education-training/administration/legislation-policy/public-schools/earning-credit-through-equivalency-challenge-external-credentials-post-secondary-credit-and-independent-directed-studies">IDS Rules</a>
+<ul><h3>Web Resources:</h3>
+<li> Gov of BC, Canada Education Information: <a href="https://www2.gov.bc.ca/gov/content/education-training/administration/legislation-policy/public-schools/earning-credit-through-equivalency-challenge-external-credentials-post-secondary-credit-and-independent-directed-studies">IDS Rules</a>
 <li>Javascript: <a href="https://www.w3schools.com/">w3schools Javascript</a>
 <li>PHP: <a href="https://www.w3schools.com/php/default.asp">w3schools PHP</a>
 <li>Electronics for Robotics: <a hrerf="https://www.particle.io/products/hardware/photon-wifi">Particle.io Photon</a>
 <li> Machine Learning: <a href="https://js.tensorflow.org/#getting-started">Tensorflowjs</a>
-<li> Fraser Valley GearBots: <a href="http://www.gearbots.org/"> http://www.gearbots.org/</a>
-<li> 3D Printing: <a href="http://fvmakers.com/"> http://fvmakers.com/ </a>
+<li>Mr. Ellis <a href="http://rocksetta.com/">rocksetta.com</a>
+ <ol>
+  <li> Mr. Ellis <a href="http://rocksetta.com/tensorflowjs/beginner-examples/tfjs06-javascript.html">Quick Reminders About Javascript</a> all on one page. Still in draft mode
+  <li> Mr. Ellis <a href="http://rocksetta.com/tensorflowjs/">Machine Learning</a> and <a href="https://www.youtube.com/watch?v=dnDb-RAvxHg&index=0&list=PL57Dnr1H_egukaDgFqwEnDVStd7Jktg1E">Video Series</a> 
+  <li> Mr. Ellis <a href="https://github.com/hpssjellis/particle.io-photon-high-school-robotics">Github Robotics</a> and <a href="https://www.youtube.com/watch?v=bOPonnhGOUg&list=PL57Dnr1H_egsL0r4RXPA4PY2yZhOJk5Nr">Video Series</a>
+  <li> Mr. Ellis <a href="https://aws.amazon.com/cloud9/?origin=c9io">Cloud9</a> Computer Coding using <a href="https://github.com/hpssjellis/pgb-cloud9">Github:Javascript, PHP and Phonegap</a> and <a href="https://www.youtube.com/watch?v=aq4JByHZt9E&list=PL57Dnr1H_egu-ZY4_NyBaK8CY3sE5rCKK">Video Series - outdated</a>
+  <li> Mr. Ellis Making a <a href="http://rocksetta.com/3d-print/">Kossel 3D Printer</a>
 </ol>
+
+</ul>
 
 <br><br>
 
-<ol><h3>General Safety Considerations:</h3>
+
+<ul><h3>Academic Resources:</h3>
+<li> The point of the IDS is to solve the problems on your own, lots of online help.
+<li> Your on-site Teacher Mentor may have some suggestions.
+<li> Local MakerSpaces may have some suggestions: Abbotsford BC <a href="http://www.gearbots.org/"> http://www.gearbots.org/</a>, Langley BC <a href="http://fvmakers.com/"> http://fvmakers.com/ </a>
+<li> Specific paid help at (Coming soon, possible limited number of scholarships)
+<li> Possibly coordination between school districts
+<li> Enrol at a School that offers these courses. Presently with Mr. Jeremy Ellis at <a href="http://mss.mpsd.ca/">Misison Secondary School</a>, Mission, BC, Canada
+</ul>
+
+<br><br>
+
+<ul><h3>General Safety Considerations:</h3>
 <li> As this is an independent study, safety and sensible decisions is paramount. A high level of safe decisions is needed to remain doing the IDS course.
 <br>
-<li> No use of open electronics above 18 Volts and or 5 Amps without a qualified adult present 
+<li> No use of open electronics above 18 Volts and or 2 Amps without a qualified adult present 
 <li> No use of soldering or other dangerous apparatus without a qualified adult present  
 <li> No use of liquids without a qualified adult present 
-<li> No assignments using (flying) drones
+<li> No assignments using (flying) drones as they have been done very well professionally and have extra levels of Safety to consider
 <li> 
 <li>
 
 <li> 
-</ol>
+</ul>
 
 
 </div>
