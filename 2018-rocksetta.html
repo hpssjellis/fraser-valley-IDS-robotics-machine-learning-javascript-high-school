@@ -62,6 +62,8 @@ function postData(url, parameters, myDivToChange2){
    xmlHttp.open("POST", url, true);
    xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
    xmlHttp.send(parameters);
+   console.log('parameters')
+   console.log(parameters)
 }
 function getFormValues(fobj){
    var str = "";
