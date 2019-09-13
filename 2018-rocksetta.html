@@ -35,6 +35,8 @@ function setAjax(){
 }
 function myAjax(f, url, myDivToChange) {
    var poststr = getFormValues(f);
+   console.log('poststr')
+   console.log(poststr)
     postData(url, poststr, myDivToChange);
 }
 function postData(url, parameters, myDivToChange2){
