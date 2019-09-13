@@ -180,11 +180,12 @@ Get this from the settings area when logged into <a href="http://particle.io/bui
    
    
    <input type=button value = test onclick="{
-                                            
-    var myVar1 = encodeURIComponent('228dccef132db1d6aea77646936533ba62932f0c');
+      var xhr = setAjax();                                       
+    var myToken = encodeURIComponent('228dccef132db1d6aea77646936533ba62932f0c');
+    var myArg = encodeURIComponent('digitalWrite(d7,1);');
 xhr.open('POST', 'https://api.particle.io/v1/devices/"+myParticleId+"/my-main', true);
 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-xhr.send('access_token=' + myVar1);                                        
+xhr.send('access_token=' + myToken + '&arg='+myArg);                                        
                                             
  }"><br>
 
