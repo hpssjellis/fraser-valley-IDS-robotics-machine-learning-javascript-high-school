@@ -8,3 +8,10 @@ Independent Directed Studies courses for High School students on Robotics, Machi
 1. (takes about 30 seconds for any webpage change to be activated)
  
 See http://rocksetta.com/ids/ for more information
+
+
+web app on  this site only is at
+
+https://hpssjellis.github.io/fraser-valley-IDS-robotics-machine-learning-javascript-high-school/2018-rocksetta.html
+
+
