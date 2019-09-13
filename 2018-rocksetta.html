@@ -35,8 +35,8 @@ function setAjax(){
 }
 function myAjax(f, url, myDivToChange) {
    var poststr = getFormValues(f);
-   console.log('poststr')
-   console.log(poststr)
+  // console.log('poststr')
+ //  console.log(poststr)
     postData(url, poststr, myDivToChange);
 }
 function postData(url, parameters, myDivToChange2){
@@ -71,13 +71,13 @@ function getFormValues(fobj){
    for(var i = 0;i < fobj.elements.length;i++){
       switch(fobj.elements[i].type){
          case "text":
-            str += fobj.elements[i].name +"=" + escape(fobj.elements[i].value) + "&";
+            str += fobj.elements[i].name +"=" + encodeURIComponent(fobj.elements[i].value) + "&";
             break;         
          case "password":
-            str += fobj.elements[i].name +"=" + escape(fobj.elements[i].value) + "&";
+            str += fobj.elements[i].name +"=" + encodeURIComponent(fobj.elements[i].value) + "&";
             break;
          case "textarea":
-            str += fobj.elements[i].name +"=" + escape(fobj.elements[i].value) + "&";
+            str += fobj.elements[i].name +"=" + encodeURIComponent(fobj.elements[i].value) + "&";
             break;
          case "select-one":
              str += fobj.elements[i].name +"=" + fobj.elements[i].options[fobj.elements[i].selectedIndex].value + "&";
@@ -91,10 +91,10 @@ function sendToParticle(myIn){
     document.all.myParameter.value = myIn
     document.myForm.action = 'https://api.spark.io/v1/devices/' + document.all.myDeviceId.value + '/' + document.all.myFunctionName.value
     
-   console.log('document.all.myCoolForm')
-   console.log(document.all.myCoolForm)
-   console.log('document.myForm.action')
-   console.log(document.myForm.action)
+ //  console.log('document.all.myCoolForm')
+  // console.log(document.all.myCoolForm)
+  // console.log('document.myForm.action')
+  // console.log(document.myForm.action)
    myAjax(document.all.myCoolForm, document.myForm.action, 'myDivId')   
     
 }
