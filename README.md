@@ -19,6 +19,6 @@ See http://rocksetta.com/ids/ for more information
 
 web app on  this site only is at
 
-https://hpssjellis.github.io/fraser-valley-IDS-robotics-machine-learning-javascript-high-school/2018-rocksetta.html
+https://hpssjellis.github.io/fraser-valley-IDS-robotics-machine-learning-javascript-high-school/public/2018-rocksetta.html
 
 
