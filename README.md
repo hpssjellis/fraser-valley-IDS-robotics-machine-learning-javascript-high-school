@@ -1,5 +1,12 @@
 # Fraser-Valley-IDS-robotics-machine-learning-javascript-high-school
 
+
+load as a gitpod
+
+https://gitpod.io/#github.com/hpssjellis/fraser-valley-IDS-robotics-machine-learning-javascript-high-school
+
+
+
 Independent Directed Studies courses for High School students on Robotics, Machine Learning, Particle.io Photon, Mesh and Raspberry Pi3 3D Printing and Coding using Javascript
 
 1. Fork this repository and in the settings--> github pages--> (select) master--> save  
