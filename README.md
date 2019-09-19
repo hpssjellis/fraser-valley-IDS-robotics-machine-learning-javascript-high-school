@@ -6,6 +6,16 @@ load as a gitpod
 https://gitpod.io/#github.com/hpssjellis/fraser-valley-IDS-robotics-machine-learning-javascript-high-school
 
 
+Run the website on gitpod by typing 
+
+```apachectl start```
+
+The two main files are in the public folder.
+
+
+
+
+
 
 Independent Directed Studies courses for High School students on Robotics, Machine Learning, Particle.io Photon, Mesh and Raspberry Pi3 3D Printing and Coding using Javascript
 
